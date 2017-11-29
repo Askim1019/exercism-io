@@ -43,12 +43,15 @@ class Hamming
     
     # iterate over each index value and compare it to index value for 
     # second array
-    str1.each_index do |index|
-      if str1.values_at(index) != str2.values_at(index)
-        hamming_distance += 1
+    if strand1.length == strand2.length
+      str1.each_index do |index|
+        if str1.values_at(index) != str2.values_at(index)
+          hamming_distance += 1
+        end
       end
+    else
+      raise ArgumentError
     end
-    
     #return the hamming_distance (this is what the method calls for)
     hamming_distance
   end
