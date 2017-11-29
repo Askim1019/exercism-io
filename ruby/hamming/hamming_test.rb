@@ -29,12 +29,12 @@ class HammingTest < Minitest::Test
   end
 
   def test_small_distance_in_small_strands
-    skip
+    #skip
     assert_equal 1, Hamming.compute('AT', 'CT')
   end
 
   def test_small_distance
-    skip
+    #skip
     assert_equal 1, Hamming.compute('GGACG', 'GGTCG')
   end
 

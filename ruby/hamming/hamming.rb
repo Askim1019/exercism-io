@@ -16,6 +16,7 @@ class Hamming
 end
 =end
 
+=begin 
 class Hamming
   
   def self.compute(strand1, strand2)
@@ -27,8 +28,30 @@ class Hamming
   end
   
 end
+=end
 
+class Hamming
+  
+  def self.compute(strand1, strand2)
+    
+     # => array ["G", "A", "C" ...]
+    str1 = strand1.upcase.split('')
+    str2 = strand2.upcase.split('')
+    
+    # => Set the distance to 0
+    hamming_distance = 0 
+    
+    # iterate over each index value and compare it to index value for 
+    # second array
+    str1.each_index do |index|
+      if str1.values_at(index) != str2.values_at(index)
+        hamming_distance += 1
+      end
+    end
+    
+    #return the hamming_distance (this is what the method calls for)
+    hamming_distance
+  end
 
+end
 
-#The call result should be this.
-#hamming('GAGCCTACTAACGGGAT', 'CATCGTAATGACGGCCT') => 7
