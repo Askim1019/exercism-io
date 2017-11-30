@@ -8,9 +8,11 @@ class GigasecondTest
     #convert birthday into seconds only
     birthday_conversion = birthday.strftime('%s').to_i
     
-    gigasecond_date_in_seconds = birthday_conversion + 1_000_000_000
+    gigasecond_date_in_seconds = birthday_conversion + gigasec
     
-    gigasecond_conversion_to_utc = 
+    gigasecond_conversion_to_utc = Time.at(gigasecond_date_in_seconds)
+    
+    gigasecond_conversion_to_utc
   end
   
 end
