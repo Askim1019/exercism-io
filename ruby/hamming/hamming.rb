@@ -1,35 +1,3 @@
-# This passes the first 4 tests.
-
-=begin
-class Hamming
-  def self.compute(strand1, strand2)
-    hamming_distance = 0
-    
-    if strand1 != strand2
-      hamming_distance += 1
-    end
-    
-    return hamming_distance
-  end
-  
-  puts Hamming.compute("AG","CT") # should return 1
-end
-=end
-
-=begin 
-class Hamming
-  
-  def self.compute(strand1, strand2)
-    hamming_distance = 0
-    
-    strand_one_arr = strand1.to_a
-    strand_two_arr = strand2.to_a
-    strand_one_arr.zip(strand1,)
-  end
-  
-end
-=end
-
 class Hamming
   
   def self.compute(strand1, strand2)
@@ -58,4 +26,20 @@ class Hamming
   end
 
 end
+
+
+# Shorter version with chained methods
+=begin
+class Hamming
+  def self.compute(string1, string2)
+    raise ArgumentError if string1.size != string2.size
+  
+    string1.chars.zip(string2.chars).count { |s1, s2| s1 != s2 }
+  end
+end
+
+module BookKeeping
+  VERSION = 3
+end
+=end
 
