@@ -14,9 +14,12 @@ class Gigasecond
     gigasecond_conversion_to_utc
   end
   
-
+  def self.short_from(utc_time)
+    utc_time + 10**9
+  end
 end
 
 module BookKeeping
   VERSION = 6 # Where the version number matches the one in the test.
 end
+
