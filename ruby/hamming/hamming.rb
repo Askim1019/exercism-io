@@ -52,6 +52,7 @@ class Hamming
     else
       raise ArgumentError
     end
+    
     #return the hamming_distance (this is what the method calls for)
     hamming_distance
   end
