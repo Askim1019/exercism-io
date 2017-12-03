@@ -11,7 +11,7 @@ class Complement
     when "C"
       return "G"
     when "T"
-      return A
+      return "A"
     when "A"
       return "U"
     end
