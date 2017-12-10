@@ -30,3 +30,5 @@ end
 module BookKeeping
   VERSION = 1
 end
+
+Sieve.new(15).primes
